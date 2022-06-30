@@ -4,9 +4,9 @@ class ProductsController < ApplicationController
     render json: product
   end
 
-  def first_product
-    product = Product.first
-    render json: Product.first
+  def one_product
+    product = Product.find_by(id: params["id"])
+    render json: product.as_json
   end
 
   def second_product
